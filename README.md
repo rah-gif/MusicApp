@@ -5,7 +5,8 @@
 ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![Supabase](https://img.shields.io/badge/Supabase-Backend-green) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC) ![License](https://img.shields.io/badge/License-MIT-blue)
 
 Aura Music is a sleek, responsive web application built to mimic the premium feel of top-tier streaming services. It features a robust backend for playlist management and a modern frontend for seamless playback.
-Explore The Music From Here! : music-app-kappa-lac.vercel.app
+
+Explore The Music From Here! : https://music-app-kappa-lac.vercel.app/
 
 
 
