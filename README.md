@@ -14,7 +14,7 @@ Aura Music is a sleek, responsive web application built to mimic the premium fee
 
 - **Global Mini-Player**: Persistent playback control across all pages.
 - **Full-Screen Mode**: Beautiful "Now Playing" interface with lyrics and up-next queue.
-- **Responsive Design**: Mobile-first approach ensuring a native app-like experience on phones.
+- **Responsive Layout**: Currently optimized for **Desktop** usage (Mobile view is in development).
 
 ### 📂 Smart Library Management
 
@@ -39,6 +39,18 @@ Aura Music is a sleek, responsive web application built to mimic the premium fee
 | **Database**  | Supabase (PostgreSQL)   | Real-time database and authentication.              |
 | **Language**  | TypeScript              | Type-safe code for reliability and maintainability. |
 | **Icons**     | Lucide React            | Consistent and lightweight icon set.                |
+
+---
+
+## 🚧 Project Status & Context
+
+> **Note**: This project was built as a **learning initiative to master TypeScript** and Next.js App Router.
+
+- **Current State**: The application is fully functional on Desktop.
+- **Future Plans**:
+  - Complete mobile-first responsive redesign.
+  - Add user authentication flow.
+  - Integrate third-party music APIs.
 
 ---
 
