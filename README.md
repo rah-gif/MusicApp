@@ -54,6 +54,19 @@ Aura Music is a sleek, responsive web application built to mimic the premium fee
 
 ---
 
+---
+
+## 🧗‍♂️ Development Journey
+
+> **Naming Note**: While the project is documented here as **Aura Music**, the deployed application currently displays as just **"Music"**. This placeholder name will be updated in the next UI refresh.
+
+### Key Challenges & Learnings
+
+- **API Integration**: Integrating the **YouTube Data API** presented interesting challenges in handling rate limits and normalizing the data structure for the frontend.
+- **Deployment Configuration**: Moving from a local environment to Vercel required troubleshooting "Root Directory" settings and environment variable management, which was a valuable lesson in CI/CD pipelines.
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
