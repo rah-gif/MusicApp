@@ -1,0 +1,113 @@
+# 🎵 Aura Music
+
+**A Modern, Ad-Free Music Streaming Experience**
+
+![Next.js](https://img.shields.io/badge/Next.js-15-black) ![Supabase](https://img.shields.io/badge/Supabase-Backend-green) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC) ![License](https://img.shields.io/badge/License-MIT-blue)
+
+Aura Music is a sleek, responsive web application built to mimic the premium feel of top-tier streaming services. It features a robust backend for playlist management and a modern frontend for seamless playback.
+
+---
+
+## ✨ Key Features
+
+### 🎧 Immersive Player
+
+- **Global Mini-Player**: Persistent playback control across all pages.
+- **Full-Screen Mode**: Beautiful "Now Playing" interface with lyrics and up-next queue.
+- **Responsive Design**: Mobile-first approach ensuring a native app-like experience on phones.
+
+### 📂 Smart Library Management
+
+- **Supabase Backend**: Secure and scalable database for user playlists and liked songs.
+- **Dynamic Playlists**: Create, edit, and delete playlists instantly with optimistic UI updates.
+- **Favorites System**: "Like" songs to add them to your personal collection.
+
+### 🎨 Modern UI/UX
+
+- **Glassmorphism**: Trendy, translucent design elements using Tailwind CSS.
+- **Smooth Transitions**: Framer Motion animations for page navigation and player expansion.
+- **Dark Mode**: Optimized for low-light environments.
+
+---
+
+## 🛠️ Technology Stack
+
+| Component     | Technology              | Description                                         |
+| :------------ | :---------------------- | :-------------------------------------------------- |
+| **Framework** | Next.js 15 (App Router) | Server-side rendering and rigorous routing.         |
+| **Styling**   | Tailwind CSS v4         | High-performance, utility-first styling.            |
+| **Database**  | Supabase (PostgreSQL)   | Real-time database and authentication.              |
+| **Language**  | TypeScript              | Type-safe code for reliability and maintainability. |
+| **Icons**     | Lucide React            | Consistent and lightweight icon set.                |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- Supabase Account
+
+### Installation
+
+1.  **Clone the Repository**
+
+    ```bash
+    git clone https://github.com/rah-gif/MusicApp.git
+    cd MusicApp
+    ```
+
+2.  **Install Dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Environment Variables**
+    Create a `.env.local` file in the root directory:
+
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+    ```
+
+4.  **Run Development Server**
+
+    ```bash
+    npm run dev
+    ```
+
+5.  **Open in Browser**
+    Navigate to `http://localhost:3000` to see the app in action.
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router pages
+├── components/          # Reusable UI components
+│   ├── Player/          # Music player logic and UI
+│   ├── Sidebar/         # Navigation and playlists
+│   └── ui/              # Shadcn/UI primitives
+├── lib/                 # Utility functions and Supabase client
+└── types/               # TypeScript interfaces
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please fork the repository and submit a pull request for any features or bug fixes.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Developed with ❤️ by **Chethana Rahul**
