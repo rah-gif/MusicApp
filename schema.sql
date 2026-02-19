@@ -1,5 +1,4 @@
 -- Music App Database Schema
--- Based on Visual Architecture & Supabase Export
 
 -- 1. Profiles Table (Private User Data)
 create table public.profiles (
