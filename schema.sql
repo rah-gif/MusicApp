@@ -1,20 +1,19 @@
 -- Music App Database Schema
+-- Based on Visual Architecture & Supabase Export
 
-
--- 1. Profiles Table (Linked to Auth)
+-- 1. Profiles Table (Private User Data)
 create table public.profiles (
-  id uuid references auth.users not null primary key,
+  id uuid references auth.users(id) on delete cascade not null primary key,
   email text,
   full_name text,
   avatar_url text,
-  updated_at timestamp with time zone,
-  website text
+  updated_at timestamp with time zone default timezone('utc'::text, now())
 );
 
 -- 2. Playlists Table
 create table public.playlists (
   id uuid default gen_random_uuid() primary key,
-  user_id uuid references public.profiles(id) not null,
+  user_id uuid references auth.users(id) on delete cascade not null,
   title text not null,
   description text,
   cover_url text,
@@ -24,24 +23,24 @@ create table public.playlists (
 -- 3. Liked Songs Table
 create table public.liked_songs (
   id uuid default gen_random_uuid() primary key,
-  user_id uuid references public.profiles(id) not null,
-  song_id text not null, -- External ID (e.g., YouTube/Spotify ID)
+  user_id uuid references auth.users(id) on delete cascade not null,
+  song_id text not null, -- External ID (YouTube/Spotify)
   title text not null,
-  artist text,
-  cover text,
+  artist text not null,
+  cover text not null,
   duration integer,
   liked_at timestamp with time zone default timezone('utc'::text, now()) not null,
-  unique(user_id, song_id) -- Prevent duplicate likes
+  unique(user_id, song_id)
 );
 
--- 4. Playlist Songs 
-
+-- 4. Playlist Songs Table
+create table public.playlist_songs (
   id uuid default gen_random_uuid() primary key,
   playlist_id uuid references public.playlists(id) on delete cascade not null,
   song_id text not null,
   title text not null,
-  artist text,
-  cover text,
+  artist text not null,
+  cover text not null,
   duration integer,
   added_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
@@ -65,7 +64,7 @@ create policy "Users can update own profile"
   on public.profiles for update using (auth.uid() = id);
 
 -- Playlists
-create policy "Information is public but modification is private" 
+create policy "Playlists are viewable by everyone" 
   on public.playlists for select using (true);
 
 create policy "Users can insert their own playlists" 
@@ -109,7 +108,7 @@ create policy "Users can remove songs from their playlists"
     )
   );
 
--- 7. Triggers
+-- 7. Triggers for User Management
 -- Auto-create profile on signup
 create or replace function public.handle_new_user() 
 returns trigger as $$
@@ -123,6 +122,3 @@ $$ language plpgsql security definer;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure public.handle_new_user();
-
--- Storage Buckets Setup (Optional/Reference)
--- insert into storage.buckets (id, name, public) values ('covers', 'covers', true);
