@@ -98,7 +98,6 @@ Explore The Music From Here! : https://music-app-kappa-lac.vercel.app/
 
     ```env
     NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
     NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
     ```
 
